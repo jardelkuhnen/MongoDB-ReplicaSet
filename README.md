@@ -87,7 +87,8 @@ Será exibido algo semelhante a imagem a seguir:
    
 #### 9 - Enfim tudo configurado. Agora para um teste final, acesse por algum cliient de mongo, como [NoSqlBooster](https://nosqlbooster.com/)
   
-  Exemplo de url utilizada para acessar seu replicaSet: mongodb://ip:port,ip:port,ip:port/?retryWrites=true&replicaSet=replicaSet
+  Exemplo de url utilizada para acessar seu replicaSet: 
+  > mongodb://ip:port,ip:port,ip:port/?retryWrites=true&replicaSet=replicaSet
 
 Tudo certo e funcionando, bora tomar uma cerveja.
 
