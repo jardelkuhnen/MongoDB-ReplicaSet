@@ -90,7 +90,9 @@ Será exibido algo semelhante a imagem a seguir:
   Exemplo de url utilizada para acessar seu replicaSet: 
   > mongodb://ip:port,ip:port,ip:port/?retryWrites=true&replicaSet=replicaSet
 
-Tudo certo e funcionando, bora tomar uma cerveja.
+
+
+#### Tudo certo e funcionando, bora tomar uma cerveja.
 
 ![alt text](https://github.com/jardelkuhnen/MongoDB-ReplicaSet/blob/main/images/beer.jpg?raw=true)
 
