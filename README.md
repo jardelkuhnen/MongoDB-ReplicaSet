@@ -53,4 +53,46 @@ Também é possível verificar via htop:
 ![alt text](https://github.com/jardelkuhnen/MongoDB-ReplicaSet/blob/main/images/mongoConf.png?raw=true)
 
 
+10 - Após realizado essa configuração em todas as maquinas do replicaSet, incluindo o arbitro, será necessário reiniciar os servico do mongo: 
+   sudo service mongod restart
+	
+CONFIGURANDO REPLICA SET E ÁRBITRO
+
+1 - Acesse o mongo, via linha de comando na máquina que será o primário: 
+   mongo –-port 38128
+
+2 - Inicialize o replicaSet
+   rs.initiate()
+
+3 - Valide as configuracoes atuais de seu replicaSet:
+   rs.config()
+   
+4 - Será exibido algo semelhante a imagem a seguir: 
+
+![alt text](https://github.com/jardelkuhnen/MongoDB-ReplicaSet/blob/main/images/replicaSetConfigurationInitial.png?raw=true)
+
+5 - Agora iremos adicionar cada maquina ao replicaSet:
+   rs.add(ipMongoReplica02:portaMongo)
+
+6 - Após adicionado verifique novamente a configuração: 
+   rs.config()
+   
+   Será exibido algo semelhante a imagem a seguir: 
+![alt text](https://github.com/jardelkuhnen/MongoDB-ReplicaSet/blob/main/images/replicaSetConfiguration.png?raw=true)
+
+7 - Agora será adicionado o árbitro: 
+   rs.addArb(“ipMongoArbitro:portaMongo”)
+
+8 - Verifique novamente a configuração do seu replicaSet e verifique se o arbitro está lá: 
+   rs.config()
+   
+9 - Enfim tudo configurado. Agora para um teste final, acesse por algum cliient de mongo, como [NoSqlBooster](https://nosqlbooster.com/)
   
+  Exemplo de url utilizada para acessar seu replicaSet: mongodb://ip:port,ip:port,ip:port/?retryWrites=true&replicaSet=replicaSet
+
+Tudo certo e funcionando, bora tomar uma cerveja.
+
+![alt text](https://github.com/jardelkuhnen/MongoDB-ReplicaSet/blob/main/images/beer.jpg?raw=true)
+
+   
+
